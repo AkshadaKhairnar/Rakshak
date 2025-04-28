@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearby Services"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👮 Police Station: Nashik Police HQ\n📍 0.3 km away"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏥 Hospital: Apollo Emergency Care\n📍 0.6 km away"
+            android:padding="12dp"
+            android:background="#E8F5E9"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📞 Emergency Number: 100"
+            android:padding="12dp"
+            android:background="#FFF3E0"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Current Location: CBS, Nashik"
+            android:padding="12dp"
+            android:background="#F3E5F5"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/sosButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🚨 Send SOS Alert"
+            android:backgroundTint="#D32F2F"
+            android:textColor="@android:color/white"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

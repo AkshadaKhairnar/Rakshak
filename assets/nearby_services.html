@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearby Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #map { height: 100vh; width: 100vw; }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    const map = L.map('map').setView([19.9975, 73.7898], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const services = [
+        { name: "Civil Hospital", lat: 19.9931, lng: 73.7972 },
+        { name: "Trimbak Naka Police Station", lat: 19.9972, lng: 73.7819 },
+        { name: "Wockhardt Hospital", lat: 20.0001, lng: 73.7760 },
+        { name: "CBS Police Station", lat: 20.0011, lng: 73.7832 }
+    ];
+
+    services.forEach(s => {
+        L.marker([s.lat, s.lng]).addTo(map).bindPopup(`<b>${s.name}</b>`);
+    });
+</script>
+</body>
+</html>

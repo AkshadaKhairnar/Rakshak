@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accident Spots Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+    const map = L.map('map').setView([19.9975, 73.7898], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Function to add marker dynamically from Android
+    function addAccidentMarker(lat, lng) {
+        L.marker([lat, lng]).addTo(map).bindPopup("Reported Accident Location").openPopup();
+    }
+
+    // Expose to Android WebView
+    window.addAccidentMarker = addAccidentMarker;
+
+    // Optional: Preload hardcoded points
+    addAccidentMarker(19.9975, 73.7898);
+    addAccidentMarker(19.9945, 73.7740);
+</script>
+</body>
+</html>
